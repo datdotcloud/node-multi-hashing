@@ -7,7 +7,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/UNOMP/node-multi-hashing.git"
+    "url": "https://github.com/DeffM/node-multi-hashing.git"
+  },
+  "config": {
+    "unsafe-perm": true
   },
   "dependencies": {
     "bindings": "*"
@@ -37,6 +40,6 @@
   "readmeFilename": "README.md",
   "description": "node-multi-hashing",
   "bugs": {
-    "url": "https://github.com/UNOMP/node-multi-hashing/issues"
+    "url": "https://github.com/DeffM/node-multi-hashing/issues"
   }
 }
