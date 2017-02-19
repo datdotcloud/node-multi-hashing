@@ -33,9 +33,9 @@ Usage
 
 Install
 
-*git clone https://github.com/DeffM/node-multi-hashing unomp-multi-hashing
-*cd unomp-multi-hashing
-*npm link --unsafe-perm
+* git clone https://github.com/DeffM/node-multi-hashing unomp-multi-hashing
+* cd unomp-multi-hashing
+* npm link --unsafe-perm
 
 
 
