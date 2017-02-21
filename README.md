@@ -5,7 +5,7 @@ Cryptocurrency hashing functions for node.js.
 
 Algorithms add
 ----------
-
+* thriddle     /ThorsRiddle, Veltor/
 
 Algorithms
 ----------
