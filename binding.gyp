@@ -34,6 +34,7 @@
                 "c11.c",
                 "thriddle.c",
                 "lyra2.c",
+                "lyra2z330.c",
                 "timetravel.c",
                 "thriddle/gost.c",
                 "lyra/sponge.c",

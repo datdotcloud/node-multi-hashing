@@ -34,6 +34,7 @@ extern "C" {
     #include "c11.h"
     #include "thriddle.h"
     #include "lyra2.h"
+    #include "lyra2z330.h"
     #include "timetravel.h"
 }
 
@@ -796,6 +797,28 @@ Handle<Value> lyra2(const Arguments& args) {
     return scope.Close(buff->handle_);
 }
 
+Handle<Value> lyra2z330(const Arguments& args) {
+    HandleScope scope;
+
+    if (args.Length() < 1)
+        return except("You must provide one argument.");
+
+    Local<Object> target = args[0]->ToObject();
+
+    if(!Buffer::HasInstance(target))
+        return except("Argument should be a buffer object.");
+
+    char * input = Buffer::Data(target);
+    char output[32];
+
+    uint32_t input_len = Buffer::Length(target);
+
+    lyra2z330_hash(input, output, input_len);
+
+    Buffer* buff = Buffer::New(output, 32);
+    return scope.Close(buff->handle_);
+}
+
 Handle<Value> timetravel(const Arguments& args) {
     HandleScope scope;
 
@@ -850,6 +873,7 @@ void init(Handle<Object> exports) {
     exports->Set(String::NewSymbol("c11"), FunctionTemplate::New(c11)->GetFunction());
     exports->Set(String::NewSymbol("thriddle"), FunctionTemplate::New(thriddle)->GetFunction());
     exports->Set(String::NewSymbol("lyra2"), FunctionTemplate::New(lyra2)->GetFunction());
+    exports->Set(String::NewSymbol("lyra2z330"), FunctionTemplate::New(lyra2z330)->GetFunction());
     exports->Set(String::NewSymbol("timetravel"), FunctionTemplate::New(timetravel)->GetFunction());
 }
 
